@@ -3,6 +3,7 @@ package frentzel.de.myglossar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -17,7 +18,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         EntryDAO dao = new EntryDAOText(MainActivity.this);
 
         try {
@@ -34,7 +35,6 @@ public class MainActivity extends Activity {
         );
         ListView listViewEntry = findViewById(R.id.listViewEntry);
         listViewEntry.setAdapter(entryListAdapter);
-        Toast.makeText(getApplication(),entries.get(0).getContent(), Toast.LENGTH_LONG).show();
         listViewEntry.setOnItemClickListener((p,v,i,l)->showDetails(p,i));
     }
 
@@ -42,6 +42,8 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this,DetailsActivity.class);
         intent.putExtra("content",entries.get(i).getContent());
         intent.putExtra("header",entries.get(i).getHeader());
+        intent.putExtra("id",i);
+        intent.putParcelableArrayListExtra("entries", (ArrayList<? extends Parcelable>) entries);
         startActivity(intent);
     }
 }
