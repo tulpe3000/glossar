@@ -1,0 +1,3 @@
+An object that draws to a rectangular area on the screen and handles click, keystroke, and other interaction events.
+A view is a base class for most layout components of an Activity or Dialog screen (text boxes, windows, and so on).
+It receives calls from its parent object (see ViewGroup) to draw itself, and informs its parent object about where and how big it would like to be (which may or may not be respected by the parent)

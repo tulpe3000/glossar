@@ -1,0 +1,5 @@
+An message object that you can use to launch or communicate with other applications/activities asynchronously.
+An Intent object is an instance of Intent. It includes several criteria fields that you can supply, to determine what application/activity receives the Intent and what the receiver does when handling the Intent.
+Available criteria include include the desired action, a category, a data string, the MIME type of the data, a handling class, and others.
+An application sends an Intent to the Android system, rather than sending it directly to another application/activity. The application can send the Intent to a single target application or it can send it as a broadcast, which can in turn be handled by multiple applications sequentially.
+The Android system is responsible for resolving the best-available receiver for each Intent, based on the criteria supplied in the Intent and the Intent Filters defined by other applications.

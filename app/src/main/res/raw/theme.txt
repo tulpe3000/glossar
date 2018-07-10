@@ -1,0 +1,2 @@
+A set of properties (text size, background color, and so on) bundled together to define various default display settings.
+Android provides a few standard themes, listed in R.style (starting with "Theme_").
